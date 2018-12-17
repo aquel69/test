@@ -75,11 +75,11 @@ public class ClasseMain {
 			
 			System.out.println("Vous avez trouvé la réponse est bien " + nbreRecherche[0] + nbreRecherche[1] + nbreRecherche[2] + nbreRecherche[3]);
 			
-			/** boucle pour relancer le programme
+			/** boucle pour relancer le programme, on entre un 'O' pour recommence et un 'N' pour quitter le programme
 			 * 	demande d'entrer 'O' ou 'N' dans le Scanner
 			 * 	try pour éviter le crash si aucune valeur est entrée dans le Scanner
 			 */
-			do { 
+			do {
 				System.out.println("Voulez vous faire une autre partie ?(O pour 'oui' / N pour 'non')");
 				
 				clavier = sc.nextLine();
