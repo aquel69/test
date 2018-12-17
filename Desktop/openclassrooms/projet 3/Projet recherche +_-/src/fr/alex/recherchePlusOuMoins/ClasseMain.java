@@ -76,8 +76,8 @@ public class ClasseMain {
 			}while(carac != 'O' && carac != 'N');
 		}while(carac == 'O');
 		System.out.println("fin de programme");
-	}
+		
+		sc.close();
+	}	
 	
-	
-
 }
