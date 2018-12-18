@@ -18,12 +18,20 @@ public class ClasseMain {
 		double nb;
 		int nbreRecherche[] = new int[4];
 		int nbrePropose[] = new int [4];
-		
+		int nbDeCoups = 0;
 		
 		/** déclaration des classes
 		 */
 		Scanner sc = new Scanner(System.in);
 		Random random= new Random();
+		
+		System.out.println("-----------------------------------------------");
+		System.out.println("------------- Jeu de Recherche +/- ------------");
+		System.out.println("-----------------------------------------------");
+		System.out.println("\n  Trouvez la combinaison en un minimum de coup");
+		System.out.println("\n-----------------------------------------------");
+		
+		
 		
 		/** boucle permettant le remplissage du tableau, contenant les chiffres aléatoires
 		 */
@@ -31,7 +39,7 @@ public class ClasseMain {
 			nb  = random.nextInt(9);
 			nombreRech = (int)nb;
 			nbreRecherche[i] = nombreRech;
-			System.out.println(nombreRech);
+			//System.out.println(nombreRech);
 		}
 		
 		/** Boucle permettant de recommencer une partie
@@ -72,12 +80,13 @@ public class ClasseMain {
 					System.out.print(reponseSigne);
 					
 				}
-				
+				nbDeCoups++;
 			}while(!Arrays.equals(nbrePropose,nbreRecherche));
 					
-			
+			System.out.println("\n\n-----------------------------------------");
 			System.out.println("Vous avez trouvé la réponse est bien " + nbreRecherche[0] + nbreRecherche[1] + nbreRecherche[2] + nbreRecherche[3]);
-			
+			System.out.println("Vous l'avez réussi en " + nbDeCoups + " coups");
+			System.out.println("-----------------------------------------");
 			/** boucle pour relancer le programme, on entre un 'O' pour recommence et un 'N' pour quitter le programme
 			 * 	demande d'entrer 'O' ou 'N' dans le Scanner
 			 * 	try pour éviter le crash si aucune valeur est entrée dans le Scanner
@@ -87,7 +96,7 @@ public class ClasseMain {
 				 * boucle permettant d'eviter une erreur en s'assurant qu'il n y est qu'un seul caractère
 				 */
 				do {
-					System.out.println("Voulez vous faire une autre partie ?(O pour 'oui' / N pour 'non')");
+					System.out.println("Voulez vous faire une autre partie ?\n(O pour 'oui' / N pour 'non')");
 					clavier = sc.nextLine();
 					System.out.println(clavier.length());
 				}while(clavier.length() != 1);
