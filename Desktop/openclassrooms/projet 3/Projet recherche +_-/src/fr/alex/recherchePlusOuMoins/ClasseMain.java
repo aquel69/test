@@ -40,9 +40,12 @@ public class ClasseMain {
 			/** Boucle permettant de comparer les valeurs des deux tableaux
 			 */
 			do {
-				System.out.println("\nVeuillez entrer une combinaison à quatre chiffres");
-				reponse = sc.nextLine();
 				
+									
+				do {
+					System.out.println("\nVeuillez entrer une combinaison à quatre chiffres");
+					reponse = sc.nextLine();
+				}while (reponse.length() != 4);
 				/**  Boucle permettant le remplissage du tableau, contenant les chiffres entrées
 				 * 	 La variable char 'nbRecup' récupère un chiffre à chaque tour de la boucle
 				 *   int nombreProp récupère et change de type la valeur de char nbRecup
@@ -80,14 +83,17 @@ public class ClasseMain {
 			 * 	try pour éviter le crash si aucune valeur est entrée dans le Scanner
 			 */
 			do {
-				System.out.println("Voulez vous faire une autre partie ?(O pour 'oui' / N pour 'non')");
+				/**
+				 * boucle permettant d'eviter une erreur en s'assurant qu'il n y est qu'un seul caractère
+				 */
+				do {
+					System.out.println("Voulez vous faire une autre partie ?(O pour 'oui' / N pour 'non')");
+					clavier = sc.nextLine();
+					System.out.println(clavier.length());
+				}while(clavier.length() != 1);
+					
+				carac = clavier.charAt(0);
 				
-				clavier = sc.nextLine();
-				try {
-					carac = clavier.charAt(0);
-				} catch(StringIndexOutOfBoundsException siobe){
-				    
-				}
 				
 			}while(carac != 'O' && carac != 'N');
 		}while(carac == 'O');
@@ -95,5 +101,5 @@ public class ClasseMain {
 		
 		sc.close();
 	}	
-	
+		
 }
